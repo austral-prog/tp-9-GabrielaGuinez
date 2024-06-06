@@ -17,10 +17,8 @@ def add_items(inventory, items):
 
 def decrement_items(inventory, items):
     for item in items:
-        if item in inventory:
+        if item in inventory and inventory[item] > 0:
             inventory[item] -= 1
-        elif inventory[item] == 0:
-            inventory[item] = -1
     return inventory
 
 def remove_item(inventory, item):
